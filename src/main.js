@@ -1,12 +1,19 @@
-import $ from "jquery";
 import "./styles/main.css";
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import tippy from 'tippy.js';
-import 'tippy.js/dist/tippy.css';
-import 'tippy.js/animations/scale.css';
+import tippy from "tippy.js";
+import "tippy.js/dist/tippy.css";
+import "tippy.js/animations/scale.css";
+import "jquery-parallax.js/parallax.min.js";
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("page-loader");
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 1000);
+});
 
 AOS.init({
   // Global settings:
@@ -32,25 +39,25 @@ AOS.init({
 window.onscroll = function () {
   var header = document.getElementById("header");
   if (window.scrollY > 50) {
-    header.classList.add(
-      "fixed",
-      "animate-slideDown"
-    );
+    header.classList.add("fixed", "animate-slideDown");
   } else {
-    header.classList.remove(
-      "fixed",
-      "animate-slideDown"
-    );
+    header.classList.remove("fixed", "animate-slideDown");
   }
 };
 
 const menuButton = document.getElementById("menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
+const menuIcon = document.getElementById("menu-icon");
+const closeIcon = document.getElementById("close-icon");
 
 menuButton.addEventListener("click", () => {
+  // Toggle mobile menu visibility
   mobileMenu.classList.toggle("hidden");
-});
 
+  // Toggle between menu and close icons
+  menuIcon.classList.toggle("hidden");
+  closeIcon.classList.toggle("hidden");
+});
 
 $(document).ready(function () {
   var menu = [];
@@ -117,27 +124,49 @@ $(document).ready(function () {
   });
 });
 
-
-tippy('#whatsapp', {
-    content: 'Whatsapp',
-    arrow: true,
-    animation: 'fade',
-    theme: 'tomato',
-    animation: 'scale',
+tippy("#whatsapp", {
+  content: "Whatsapp",
+  arrow: true,
+  animation: "fade",
+  theme: "tomato",
+  animation: "scale",
 });
 
-tippy('#getQuote', {
-    content: 'Get a Quote',
-    arrow: true,
-    animation: 'fade',
-    theme: 'tomato',
-    animation: 'scale',
+tippy("#getQuote", {
+  content: "Get a Quote",
+  arrow: true,
+  animation: "fade",
+  theme: "tomato",
+  animation: "scale",
 });
 
-tippy('#downloadProfile', {
-    content: 'Download Profile',
-    arrow: true,
-    animation: 'fade',
-    theme: 'tomato',
-    animation: 'scale',
+tippy("#downloadProfile", {
+  content: "Download Profile",
+  arrow: true,
+  animation: "fade",
+  theme: "tomato",
+  animation: "scale",
+});
+
+$(".parallax-window").parallax({
+  naturalWidth: 600,
+  naturalHeight: 400,
+  iosFix: true,
+  androidFix: true,
+});
+
+const mobileServicesMenu = document.getElementById("mobileServicesMenu");
+const mobileServicesDiv = document.getElementById("mobileServicesDiv");
+
+mobileServicesMenu.addEventListener("click", () => {
+  // Check if the menu is currently open or closed
+  if (mobileServicesDiv.classList.contains("max-h-0")) {
+    // Open the menu - set max-height to a large enough value (e.g., 500px or 1000px)
+    mobileServicesDiv.classList.remove("max-h-0");
+    mobileServicesDiv.classList.add("max-h-[500px]");
+  } else {
+    // Close the menu - set max-height to 0
+    mobileServicesDiv.classList.remove("max-h-[500px]");
+    mobileServicesDiv.classList.add("max-h-0");
+  }
 });

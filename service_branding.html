@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div
+      id="page-loader"
+      class="fixed inset-0 bg-secondary opacity-80 flex items-center justify-center z-50"
+    >
+      <span class="loader"></span>
+    </div>
+    <header class="bg-secondary p-5 w-full z-10" id="header">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-12 items-center">
+          <div class="col-span-6 md:col-span-4 lg:col-span-2">
+            <img
+              class="h-auto w-full md:w-2/3 lg:w-2/3"
+              src="./public/images/logo.svg"
+              alt="Logo"
+            />
+          </div>
+          <nav class="col-span-12 md:col-span-8 lg:col-span-10 hidden md:block">
+            <div
+              class="flex justify-end space-x-6 text-base text-primary-300 tracking-wider"
+            >
+              <a
+                href="index.html"
+                class="hover:text-white transition-all duration-300 ease-in"
+                >Home</a
+              >
+              <div
+                class="relative inline-block text-left group hover:text-white"
+              >
+                <a
+                  href="service_branding.html"
+                  id="service-button"
+                  aria-expanded="true"
+                  aria-haspopup="true"
+                  class="transition-all duration-300 ease-in"
+                >
+                  Services
+                </a>
+                <div
+                  class="absolute -right-7 z-10 w-64 origin-top-right focus:outline-none pt-7 transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-all duration-300 ease-out invisible group-hover:visible"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                  tabindex="-1"
+                >
+                  <div
+                    class="bg-primary-500 shadow-lg ring-1 ring-black ring-opacity-5 tracking-normal"
+                    role="none"
+                  >
+                    <a
+                      href="service_branding.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Indoor & Outdoor Branding
+                    </a>
+                    <a
+                      href="service_signage.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Indoor & Outdoor Signs
+                    </a>
+                    <a
+                      href="service_graphics.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Office & Store’s Wall Graphics
+                    </a>
+                    <a
+                      href="service_bags.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Paper Bags & Boxes
+                    </a>
+                    <a
+                      href="service_flags.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Flags & Banners
+                    </a>
+                    <a
+                      href="service_gifts.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Gifts & Promotions
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="contact.html"
+                class="hover:text-white transition-all duration-300 ease-in"
+                >Contact Us</a
+              >
+              <a
+                href="/effor_profile.pdf"
+                target="_blank"
+                class="hover:text-white transition-all duration-300 ease-in"
+                >Company Profile</a
+              >
+            </div>
+          </nav>
+          <div class="md:hidden col-span-6 flex justify-end">
+            <button
+              id="menu-button"
+              class="text-primary-500 bg-transparent focus:outline-none"
+            >
+              <svg
+                id="menu-icon"
+                class="w-10 h-10"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+              <svg
+                id="close-icon"
+                class="w-10 h-10 hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden mt-5">
+        <nav class="flex flex-col space-y-2">
+          <a
+            class="font-medium text-sm text-primary-500 pt-2 pb-4 border-b border-neutral-800 leading-relaxed"
+            href="index.html"
+            >Home</a
+          >
+          <div class="border-b border-neutral-800 leading-relaxed">
+            <a
+              id="mobileServicesMenu"
+              class="font-medium text-sm text-primary-500 pt-2 pb-4 float-left w-full"
+              >Services</a
+            >
+            <div
+              id="mobileServicesDiv"
+              class="max-h-0 overflow-hidden transition-all duration-500 pl-8 space-y-2 float-left w-full"
+            >
+              <a
+                class="font-sm text-sm text-primary-500 pb-3 float-left w-full"
+                href="service_branding.html"
+                >Indoor & Outdoor Branding</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_signage.html"
+                >Indoor & Outdoor Signs</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_graphics.html"
+                >Office & Store’s Wall Graphics</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_bags.html"
+                >Paper Bags & Boxes</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_flags.html"
+                >Flags & Banners</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 pt-3 float-left w-full pb-5"
+                href="service_gifts.html"
+                >Gifts & Promotions</a
+              >
+            </div>
+          </div>
+          <a
+            class="font-medium text-sm text-primary-500 pt-2 pb-4 border-b border-neutral-800 leading-relaxed"
+            href="contact.html"
+            >Contact Us</a
+          >
+          <a
+            class="font-medium text-sm text-primary-500 pt-2 leading-relaxed"
+            href="/effor_profile.pdf"
+            >Company Profile</a
+          >
+        </nav>
+      </div>
+    </header>
+    <section class="relative">
+      <div
+        class="parallax-window min-h-[400px] lg:min-h-[750px] md:min-h-[500px] flex flex-col items-center justify-center"
+        data-parallax="scroll"
+        data-image-src="/images/service1.webp"
+      >
+        <div class="absolute inset-0 bg-black opacity-80"></div>
+        <h2
+          class="font-bold text-xl md:text-2xl lg:text-6xl text-center text-primary-500 relative z-8"
+        >
+          Indoor & Outdoor Branding
+        </h2>
+        <p
+          class="w-full p-4 md:w-3/4 lg:w-1/2 text-center font-medium text-base lg:text-xl text-white mt-0 lg:mt-4 relative z-8 lg:leading-loose"
+        >
+          Elevate your brand presence with dynamic indoor and outdoor solutions
+          that engage and attract your audience effectively.
+        </p>
+      </div>
+    </section>
+    <section class="bg-white py-6 md:py-6 lg:py-28 md:px-5 lg:px-0">
+      <div class="container mx-auto px-4 md:px-0">
+        <div
+          class="flex flex-col md:flex-row justify-center lg:space-x-48 md:space-x-6 space-y-8 md:space-y-0 lg:space-y-0"
+        >
+          <div class="w-full lg:w-1/3 md:w-1/2" data-aos="flip-left">
+            <img
+              class="h-80 mb-5 lg:mb-8 rounded-lg"
+              src="/images/service1.webp"
+            />
+            <h3
+              class="text-primary-500 text-l md:text-xl lg:text-2xl font-semibold leading-relaxed"
+            >
+              Hoarding, Mall Hoarding,<br />
+              Mall Hoarding Sticker
+            </h3>
+            <p
+              class="text-sm md:text-base lg:text-base text-secondary leading-relaxed mt-2 lg:mt-4"
+            >
+              Dubai is a city that never sleeps, and its streets never stop
+              buzzing. Bus Advertising was missing in Dubai but is now back and
+              how! People are the least distracted when they are out and about
+              and are ready to soak in everything they see.
+            </p>
+            <a
+              href="service.html"
+              class="bg-primary-500 text-sm md:text-base lg:text-base float-left text-secondary rounded-full py-3 px-5 font-medium mt-4 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+              >Contact Us</a
+            >
+          </div>
+          <div class="w-full lg:w-1/3 md:w-1/2" data-aos="flip-right">
+            <img
+              class="h-80 mb-5 lg:mb-8 rounded-lg"
+              src="/images/service1.webp"
+            />
+            <h3
+              class="text-primary-500 text-l md:text-xl lg:text-2xl font-semibold leading-relaxed"
+            >
+              Hoarding, Mall Hoarding,<br />
+              Mall Hoarding Sticker
+            </h3>
+            <p
+              class="text-sm md:text-base lg:text-base text-secondary leading-relaxed mt-2 lg:mt-4"
+            >
+              Dubai is a city that never sleeps, and its streets never stop
+              buzzing. Bus Advertising was missing in Dubai but is now back and
+              how! People are the least distracted when they are out and about
+              and are ready to soak in everything they see.
+            </p>
+            <a
+              href="service.html"
+              class="bg-primary-500 text-sm md:text-base lg:text-base float-left text-secondary rounded-full py-3 px-5 font-medium mt-4 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row justify-center lg:space-x-48 md:space-x-6 space-y-8 md:space-y-0 lg:space-y-0 mt-8 md:mt-12 lg:mt-24"
+        >
+          <div class="w-full lg:w-1/3 md:w-1/2" data-aos="flip-left">
+            <img
+              class="h-80 mb-5 lg:mb-8 rounded-lg"
+              src="/images/service1.webp"
+            />
+            <h3
+              class="text-primary-500 text-l md:text-xl lg:text-2xl font-semibold leading-relaxed"
+            >
+              Hoarding, Mall Hoarding,<br />
+              Mall Hoarding Sticker
+            </h3>
+            <p
+              class="text-sm md:text-base lg:text-base text-secondary leading-relaxed mt-2 lg:mt-4"
+            >
+              Dubai is a city that never sleeps, and its streets never stop
+              buzzing. Bus Advertising was missing in Dubai but is now back and
+              how! People are the least distracted when they are out and about
+              and are ready to soak in everything they see.
+            </p>
+            <a
+              href="service.html"
+              class="bg-primary-500 text-sm md:text-base lg:text-base float-left text-secondary rounded-full py-3 px-5 font-medium mt-4 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+              >Contact Us</a
+            >
+          </div>
+          <div class="w-full lg:w-1/3 md:w-1/2" data-aos="flip-left">
+            <img
+              class="h-80 mb-5 lg:mb-8 rounded-lg"
+              src="/images/service1.webp"
+            />
+            <h3
+              class="text-primary-500 text-l md:text-xl lg:text-2xl font-semibold leading-relaxed"
+            >
+              Hoarding, Mall Hoarding,<br />
+              Mall Hoarding Sticker
+            </h3>
+            <p
+              class="text-sm md:text-base lg:text-base text-secondary leading-relaxed mt-2 lg:mt-4"
+            >
+              Dubai is a city that never sleeps, and its streets never stop
+              buzzing. Bus Advertising was missing in Dubai but is now back and
+              how! People are the least distracted when they are out and about
+              and are ready to soak in everything they see.
+            </p>
+            <a
+              href="service.html"
+              class="bg-primary-500 text-sm md:text-base lg:text-base float-left text-secondary rounded-full py-3 px-5 font-medium mt-4 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-primary-500 px-4 lg:px-0 py-6 lg:py-14">
+      <div class="container mx-auto grid grid-cols-12">
+        <div class="col-span-12 lg:col-span-2">
+          <h5 class="font-semibold text-white text-l lg:text-xl mb-3 lg:mb-0">
+            Connect With Us
+          </h5>
+        </div>
+        <div class="col-span-12 lg:col-span-3 flex flex-col items-start">
+          <h4
+            class="text-white font-medium text-base lg:text-lg leading-relaxed"
+          >
+            Thanks to innovation, you have complete control and flexibility on
+            any budget. Big or small.
+          </h4>
+          <a
+            href="tel:+971557637146"
+            class="py-3 px-5 rounded-full border-2 border-white font-semibold text-white mt-5 transition duration-300 ease-in-out hover:bg-secondary hover:border-secondary"
+          >
+            +971 55 763 7146
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-secondary px-4 lg:px-0 py-6 lg:py-14">
+      <div class="container mx-auto grid grid-cols-12 items-end">
+        <div class="col-span-12 lg:col-span-5">
+          <h4 class="text-white text-lg lg:text-lg font-medium">
+            EFFOR Advertising
+          </h4>
+          <p class="text-white text-sm leading-relaxed mt-2 lg:mt-5">
+            P.O Box: 23320, Al Asher Office Building, Dubai, U.A.E<br />
+            Tel: 04 379 4618, Mob: +971 55 763 7146<br />
+            Email: efforads@gmail.com
+          </p>
+          <p class="text-white text-sm leading-relaxed mt-1 lg:mt-12">
+            www.effor.ae
+          </p>
+        </div>
+        <div class="col-span-12 lg:col-span-4 mt-7 lg:mt-0">
+          <p class="text-white text-sm leading-relaxed mb-1">
+            Subscribe to our newsletter
+          </p>
+          <input
+            type="text"
+            placeholder="Email"
+            class="border-b-2 border-gray-400 bg-transparent text-sm text-white w-full lg:w-2/3 py-3"
+          />
+          <p
+            class="text-white text-sm leading-relaxed mt-12 text-center lg:text-left"
+          >
+            @2024 EFFOR all Rights Reserved
+          </p>
+        </div>
+        <div class="col-span-12 lg:col-span-3">
+          <div
+            class="flex justify-center lg:justify-end space-x-2 text-sm mt-5 lg:mt-0"
+          >
+            <a
+              href="#"
+              class="transition duration-300 ease-in-out hover:scale-110"
+            >
+              <img src="./public/images/icons/whatsapp.svg" class="w-8 h-8" />
+            </a>
+            <a
+              href="#"
+              class="transition duration-300 ease-in-out hover:scale-110"
+            >
+              <img src="./public/images/icons/fb.svg" class="w-8 h-8" />
+            </a>
+            <a
+              href="#"
+              class="transition duration-300 ease-in-out hover:scale-110"
+            >
+              <img src="./public/images/icons/insta.svg" class="w-8 h-8" />
+            </a>
+            <a
+              href="#"
+              class="transition duration-300 ease-in-out hover:scale-110"
+            >
+              <img src="./public/images/icons/linkedin.svg" class="w-8 h-8" />
+            </a>
+            <a
+              href="#"
+              class="transition duration-300 ease-in-out hover:scale-110"
+            >
+              <img src="./public/images/icons/twitter.svg" class="w-8 h-8" />
+            </a>
+          </div>
+          <div
+            class="lg:flex justify-end space-x-3 text-sm mt-8 text-white hidden"
+          >
+            <a href="#" class="hover:text-primary-300"> Home </a>
+            <a href="#" class="hover:text-primary-300"> About Us </a>
+            <a href="#" class="hover:text-primary-300"> Services </a>
+            <a href="#" class="hover:text-primary-300"> Contact Us </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

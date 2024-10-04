@@ -7,30 +7,125 @@
     <title>Effor Advertising</title>
   </head>
   <body>
+    <div
+      id="page-loader"
+      class="fixed inset-0 bg-secondary opacity-80 flex items-center justify-center z-50"
+    >
+      <span class="loader"></span>
+    </div>
     <header class="bg-secondary p-5 w-full z-10" id="header">
       <div class="container mx-auto">
         <div class="grid grid-cols-12 items-center">
-          <div class="col-span-6 md:col-span-2">
+          <div class="col-span-6 md:col-span-4 lg:col-span-2">
             <img
               class="h-auto w-full md:w-2/3 lg:w-2/3"
               src="./public/images/logo.svg"
               alt="Logo"
             />
           </div>
-          <nav class="col-span-10 hidden md:block">
-            <div class="flex justify-end space-x-6 text-sm text-white">
-              <a href="#" class="hover:text-primary-300">Home</a>
-              <a href="#" class="hover:text-primary-300">About Us</a>
-              <a href="service.html" class="hover:text-primary-300">Services</a>
-              <a href="#" class="hover:text-primary-300">Contact Us</a>
+          <nav class="col-span-12 md:col-span-8 lg:col-span-10 hidden md:block">
+            <div
+              class="flex justify-end space-x-6 text-base text-primary-300 tracking-wider"
+            >
+              <a
+                href="index.html"
+                class="hover:text-white transition-all duration-300 ease-in"
+                >Home</a
+              >
+              <div
+                class="relative inline-block text-left group hover:text-white"
+              >
+                <a
+                  href="service_branding.html"
+                  id="service-button"
+                  aria-expanded="true"
+                  aria-haspopup="true"
+                  class="transition-all duration-300 ease-in"
+                >
+                  Services
+                </a>
+                <div
+                  class="absolute -right-7 z-10 w-64 origin-top-right focus:outline-none pt-7 transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-all duration-300 ease-out invisible group-hover:visible"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                  tabindex="-1"
+                >
+                  <div
+                    class="bg-primary-500 shadow-lg ring-1 ring-black ring-opacity-5 tracking-normal"
+                    role="none"
+                  >
+                    <a
+                      href="service_branding.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Indoor & Outdoor Branding
+                    </a>
+                    <a
+                      href="service_signage.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Indoor & Outdoor Signs
+                    </a>
+                    <a
+                      href="service_graphics.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Office & Store’s Wall Graphics
+                    </a>
+                    <a
+                      href="service_bags.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Paper Bags & Boxes
+                    </a>
+                    <a
+                      href="service_flags.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Flags & Banners
+                    </a>
+                    <a
+                      href="service_gifts.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Gifts & Promotions
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="contact.html"
+                class="hover:text-white transition-all duration-300 ease-in"
+                >Contact Us</a
+              >
+              <a
+                href="/effor_profile.pdf"
+                target="_blank"
+                class="hover:text-white transition-all duration-300 ease-in"
+                >Company Profile</a
+              >
             </div>
           </nav>
           <div class="md:hidden col-span-6 flex justify-end">
             <button
               id="menu-button"
-              class="text-white bg-transparent focus:outline-none"
+              class="text-primary-500 bg-transparent focus:outline-none"
             >
               <svg
+                id="menu-icon"
                 class="w-10 h-10"
                 fill="none"
                 stroke="currentColor"
@@ -44,45 +139,123 @@
                   d="M4 6h16M4 12h16m-7 6h7"
                 ></path>
               </svg>
+              <svg
+                id="close-icon"
+                class="w-10 h-10 hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
             </button>
           </div>
         </div>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden bg-gray-700">
-        <nav class="flex flex-col space-y-2 p-4">
-          <a href="">Home</a>
-          <a href="">About</a>
-          <a href="">Contact</a>
+      <div id="mobile-menu" class="hidden md:hidden mt-5">
+        <nav class="flex flex-col space-y-2">
+          <a
+            class="font-medium text-sm text-primary-500 pt-2 pb-4 border-b border-neutral-800 leading-relaxed"
+            href="index.html"
+            >Home</a
+          >
+          <div class="border-b border-neutral-800 leading-relaxed">
+            <a
+              id="mobileServicesMenu"
+              class="font-medium text-sm text-primary-500 pt-2 pb-4 float-left w-full"
+              >Services</a
+            >
+            <div
+              id="mobileServicesDiv"
+              class="max-h-0 overflow-hidden transition-all duration-500 pl-8 space-y-2 float-left w-full"
+            >
+              <a
+                class="font-sm text-sm text-primary-500 pb-3 float-left w-full"
+                href="service_branding.html"
+                >Indoor & Outdoor Branding</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_signage.html"
+                >Indoor & Outdoor Signs</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_graphics.html"
+                >Office & Store’s Wall Graphics</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_bags.html"
+                >Paper Bags & Boxes</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_flags.html"
+                >Flags & Banners</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 pt-3 float-left w-full pb-5"
+                href="service_gifts.html"
+                >Gifts & Promotions</a
+              >
+            </div>
+          </div>
+          <a
+            class="font-medium text-sm text-primary-500 pt-2 pb-4 border-b border-neutral-800 leading-relaxed"
+            href="contact.html"
+            >Contact Us</a
+          >
+          <a
+            class="font-medium text-sm text-primary-500 pt-2 leading-relaxed"
+            href="/effor_profile.pdf"
+            >Company Profile</a
+          >
         </nav>
       </div>
     </header>
-    <section class="bg-secondary relative z-0 flex overflow-hidden">
+    <section
+      class="bg-secondary relative z-0 flex h-96 lg:h-650px md:h-350px overflow-hidden"
+    >
       <div class="swiper-container w-full h-full">
         <div class="swiper-wrapper">
           <div class="swiper-slide overflow-hidden">
             <div
-              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat flex items-center py-24 bg-contain"
+              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat flex items-center py-24 bg-cover lg:bg-contain"
               data-background="images/banner1.webp"
             >
-              <div class="container mx-auto">
-                <div class="w-1/2" data-aos="fade-right">
+              <div
+                class="container mx-auto inset-0 bg-black bg-opacity-60 backdrop-blur-xs py-10 lg:py-0 lg:bg-transparent"
+              >
+                <div
+                  class="w-full lg:w-1/2 flex flex-col lg:items-start items-center p-4 lg:p-0"
+                >
                   <h2
-                    class="font-semibold text-primary-500 text-7xl uppercase leading-tight"
+                    class="font-semibold lg:font-bold text-primary-500 text-2xl md:text-3xl lg:text-6xl leading-relaxed lg:leading-tight text-center lg:text-left"
+                    data-swiper-parallax="300"
                   >
-                    Sky is not <br />the limit
+                    Brand Your Space <br />Inside and Out!
                   </h2>
                   <h3
-                    class="font-normal text-white text-lg leading-relaxed w-1/2 mt-3"
+                    class="font-normal text-white text-sm lg:text-lg leading-relaxed w-full lg:w-1/2 md:w-3/4 mt-3 text-center lg:text-left"
+                    data-swiper-parallax="400"
                   >
-                    Bus Advertising for Dubai is back, and with it comes
-                    innovation like never before
+                    Elevate your brand presence with dynamic indoor and outdoor
+                    solutions that engage and attract your audience effectively.
                   </h3>
-                  <button
-                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105;"
+                  <a
+                    href="tel:+971557637146"
+                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105"
                   >
-                    Call Us: +971 55 763 7146
-                  </button>
-                  <div class="flex space-x-4 pt-20">
+                    Call Us : +971 55 763 7146
+                  </a>
+                  <div class="flex space-x-4 pt-7 lg:pt-20">
                     <a
                       href="#"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
@@ -105,7 +278,8 @@
                       </div>
                     </a>
                     <a
-                      href="#"
+                      href="/effor_profile.pdf"
+                      target="_blank"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
                       id="downloadProfile"
                     >
@@ -118,28 +292,37 @@
           </div>
           <div class="swiper-slide overflow-hidden">
             <div
-              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat bg-contain flex items-center py-24"
+              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat flex items-center py-24 bg-cover lg:bg-contain"
               data-background="images/banner2.webp"
             >
-              <div class="container mx-auto">
-                <div class="w-1/2" data-aos="fade-right">
+              <div
+                class="container mx-auto inset-0 bg-black bg-opacity-60 backdrop-blur-xs py-10 lg:py-0 lg:bg-transparent"
+              >
+                <div
+                  class="w-full lg:w-1/2 flex flex-col lg:items-start items-center p-4 lg:p-0"
+                  data-aos="fade-right"
+                >
                   <h2
-                    class="font-semibold text-primary-500 text-7xl uppercase leading-tight"
+                    class="font-semibold lg:font-bold text-primary-500 text-2xl md:text-3xl lg:text-6xl leading-relaxed lg:leading-tight text-center lg:text-left"
+                    data-swiper-parallax="300"
                   >
-                    Sky is not <br />the limit
+                    Signs That Speak <br />Volumes!
                   </h2>
                   <h3
-                    class="font-normal text-white text-lg leading-relaxed w-1/2 mt-3"
+                    class="font-normal text-white text-sm lg:text-lg leading-relaxed w-full md:w-3/4 lg:w-1/2 mt-3 text-center lg:text-left"
+                    data-swiper-parallax="400"
                   >
-                    Bus Advertising for Dubai is back, and with it comes
-                    innovation like never before
+                    Boost your brand visibility with effective indoor and
+                    outdoor signs that engage your audience and clearly
+                    communicate your message.
                   </h3>
-                  <button
-                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105;"
+                  <a
+                    href="tel:+971557637146"
+                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105"
                   >
-                    Call Us: +971 55 763 7146
-                  </button>
-                  <div class="flex space-x-4 pt-20">
+                    Call Us : +971 55 763 7146
+                  </a>
+                  <div class="flex space-x-4 pt-7 lg:pt-20">
                     <a
                       href="#"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
@@ -162,7 +345,8 @@
                       </div>
                     </a>
                     <a
-                      href="#"
+                      href="/effor_profile.pdf"
+                      target="_blank"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
                       id="downloadProfile"
                     >
@@ -175,28 +359,37 @@
           </div>
           <div class="swiper-slide overflow-hidden">
             <div
-              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat bg-contain flex items-center py-24"
+              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat flex items-center py-24 bg-cover lg:bg-contain"
               data-background="images/banner3.webp"
             >
-              <div class="container mx-auto">
-                <div class="w-1/2" data-aos="fade-right">
+              <div
+                class="container mx-auto inset-0 bg-black bg-opacity-60 backdrop-blur-xs py-10 lg:py-0 lg:bg-transparent"
+              >
+                <div
+                  class="w-full lg:w-1/2 flex flex-col lg:items-start items-center p-4 lg:p-0"
+                  data-aos="fade-right"
+                >
                   <h2
-                    class="font-semibold text-primary-500 text-7xl uppercase leading-tight"
+                    class="font-semibold lg:font-bold text-primary-500 text-2xl md:text-3xl lg:text-6xl leading-relaxed lg:leading-tight text-center lg:text-left"
+                    data-swiper-parallax="300"
                   >
-                    Sky is not <br />the limit
+                    Create Impact<br />with Every Wall!
                   </h2>
                   <h3
-                    class="font-normal text-white text-lg leading-relaxed w-1/2 mt-3"
+                    class="font-normal text-white text-sm lg:text-lg leading-relaxed w-full lg:w-1/2 md:w-3/4 mt-3 text-center lg:text-left"
+                    data-swiper-parallax="400"
                   >
-                    Bus Advertising for Dubai is back, and with it comes
-                    innovation like never before
+                    Transform your space with eye-catching wall graphics that
+                    enhance branding and creativity. Our designs turn ordinary
+                    walls into impactful visual statements.
                   </h3>
-                  <button
-                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105;"
+                  <a
+                    href="tel:+971557637146"
+                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105"
                   >
-                    Call Us: +971 55 763 7146
-                  </button>
-                  <div class="flex space-x-4 pt-20">
+                    Call Us : +971 55 763 7146
+                  </a>
+                  <div class="flex space-x-4 pt-7 lg:pt-20">
                     <a
                       href="#"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
@@ -219,7 +412,8 @@
                       </div>
                     </a>
                     <a
-                      href="#"
+                      href="/effor_profile.pdf"
+                      target="_blank"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
                       id="downloadProfile"
                     >
@@ -232,28 +426,37 @@
           </div>
           <div class="swiper-slide overflow-hidden">
             <div
-              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat bg-contain flex items-center py-24"
+              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat flex items-center py-24 bg-cover lg:bg-contain"
               data-background="images/banner4.webp"
             >
-              <div class="container mx-auto">
-                <div class="w-1/2" data-aos="fade-right">
+              <div
+                class="container mx-auto inset-0 bg-black bg-opacity-60 backdrop-blur-xs py-10 lg:py-0 lg:bg-transparent"
+              >
+                <div
+                  class="w-full lg:w-1/2 flex flex-col lg:items-start items-center p-4 lg:p-0"
+                  data-aos="fade-right"
+                >
                   <h2
-                    class="font-semibold text-primary-500 text-7xl uppercase leading-tight"
+                    class="font-semibold lg:font-bold text-primary-500 text-2xl md:text-3xl lg:text-6xl leading-relaxed lg:leading-tight text-center lg:text-left"
+                    data-swiper-parallax="300"
                   >
-                    Sky is not <br />the limit
+                    Pack it Right <br />Make it Bright!
                   </h2>
                   <h3
-                    class="font-normal text-white text-lg leading-relaxed w-1/2 mt-3"
+                    class="font-normal text-white text-sm lg:text-lg leading-relaxed w-full md:w-3/4 lg:w-1/2 mt-3 text-center lg:text-left"
+                    data-swiper-parallax="400"
                   >
-                    Bus Advertising for Dubai is back, and with it comes
-                    innovation like never before
+                    Explore eco-friendly paper bags, boxes, and cups that blend
+                    style and sustainability, perfect for enhancing your brand
+                    while caring for the planet.
                   </h3>
-                  <button
-                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105;"
+                  <a
+                    href="tel:+971557637146"
+                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105"
                   >
-                    Call Us: +971 55 763 7146
-                  </button>
-                  <div class="flex space-x-4 pt-20">
+                    Call Us : +971 55 763 7146
+                  </a>
+                  <div class="flex space-x-4 pt-7 lg:pt-20">
                     <a
                       href="#"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
@@ -276,7 +479,8 @@
                       </div>
                     </a>
                     <a
-                      href="#"
+                      href="/effor_profile.pdf"
+                      target="_blank"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
                       id="downloadProfile"
                     >
@@ -289,28 +493,37 @@
           </div>
           <div class="swiper-slide overflow-hidden">
             <div
-              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat bg-contain flex items-center py-24"
+              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat flex items-center py-24 bg-cover lg:bg-contain"
               data-background="images/banner5.webp"
             >
-              <div class="container mx-auto">
-                <div class="w-1/2" data-aos="fade-right">
+              <div
+                class="container mx-auto inset-0 bg-black bg-opacity-60 backdrop-blur-xs py-10 lg:py-0 lg:bg-transparent"
+              >
+                <div
+                  class="w-full lg:w-1/2 flex flex-col lg:items-start items-center p-4 lg:p-0"
+                  data-aos="fade-right"
+                >
                   <h2
-                    class="font-semibold text-primary-500 text-7xl uppercase leading-tight"
+                    class="font-semibold lg:font-bold text-primary-500 text-2xl md:text-3xl lg:text-6xl leading-relaxed lg:leading-tight text-center lg:text-left"
+                    data-swiper-parallax="300"
                   >
-                    Sky is not <br />the limit
+                    Flags that Wave <br />Your Brand!
                   </h2>
                   <h3
-                    class="font-normal text-white text-lg leading-relaxed w-1/2 mt-3"
+                    class="font-normal text-white text-sm lg:text-lg leading-relaxed w-full md:w-3/4 lg:w-1/2 mt-3 text-center lg:text-left"
+                    data-swiper-parallax="400"
                   >
-                    Bus Advertising for Dubai is back, and with it comes
-                    innovation like never before
+                    Boost your visibility with our vibrant flags and banners,
+                    perfect for promoting your brand and making a memorable
+                    impression at any event.
                   </h3>
-                  <button
-                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105;"
+                  <a
+                    href="tel:+971557637146"
+                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105"
                   >
-                    Call Us: +971 55 763 7146
-                  </button>
-                  <div class="flex space-x-4 pt-20">
+                    Call Us : +971 55 763 7146
+                  </a>
+                  <div class="flex space-x-4 pt-7 lg:pt-20">
                     <a
                       href="#"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
@@ -333,7 +546,8 @@
                       </div>
                     </a>
                     <a
-                      href="#"
+                      href="/effor_profile.pdf"
+                      target="_blank"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
                       id="downloadProfile"
                     >
@@ -346,28 +560,37 @@
           </div>
           <div class="swiper-slide overflow-hidden">
             <div
-              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat bg-contain flex items-center py-24"
+              class="slide-inner slide-bg-image h-full bg-right bg-no-repeat flex items-center py-24 bg-cover lg:bg-contain"
               data-background="images/banner6.webp"
             >
-              <div class="container mx-auto">
-                <div class="w-1/2" data-aos="fade-right">
+              <div
+                class="container mx-auto inset-0 bg-black bg-opacity-60 backdrop-blur-xs py-10 lg:py-0 lg:bg-transparent"
+              >
+                <div
+                  class="w-full lg:w-1/2 flex flex-col lg:items-start items-center p-4 lg:p-0"
+                  data-aos="fade-right"
+                >
                   <h2
-                    class="font-semibold text-primary-500 text-7xl uppercase leading-tight"
+                    class="font-semibold lg:font-bold text-primary-500 text-2xl md:text-3xl lg:text-6xl leading-relaxed lg:leading-tight text-center lg:text-left"
+                    data-swiper-parallax="300"
                   >
-                    Sky is not <br />the limit
+                    Print Your Passion <br />on Every Tee!
                   </h2>
                   <h3
-                    class="font-normal text-white text-lg leading-relaxed w-1/2 mt-3"
+                    class="font-normal text-white text-sm lg:text-lg leading-relaxed w-full md:w-3/4 lg:w-1/2 mt-3 text-center lg:text-left"
+                    data-swiper-parallax="400"
                   >
-                    Bus Advertising for Dubai is back, and with it comes
-                    innovation like never before
+                    Create custom t-shirts that reflect your unique style and
+                    message. With vibrant prints and a variety of designs, we
+                    bring your ideas to life on high-quality fabric.
                   </h3>
-                  <button
-                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105;"
+                  <a
+                    href="tel:+971557637146"
+                    class="bg-primary-500 text-gray-900 font-semibold py-2 px-4 mt-6 rounded-full transition duration-300 ease-in-out hover:bg-primary-400 hover:scale-105"
                   >
-                    Call Us: +971 55 763 7146
-                  </button>
-                  <div class="flex space-x-4 pt-20">
+                    Call Us : +971 55 763 7146
+                  </a>
+                  <div class="flex space-x-4 pt-7 lg:pt-20">
                     <a
                       href="#"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
@@ -390,7 +613,8 @@
                       </div>
                     </a>
                     <a
-                      href="#"
+                      href="/effor_profile.pdf"
+                      target="_blank"
                       class="border-white border-2 rounded-full p-2 transition duration-300 ease-in-out hover:scale-110"
                       id="downloadProfile"
                     >
@@ -404,14 +628,16 @@
         </div>
       </div>
     </section>
-    <section class="what_we_do bg-primary-500 py-20">
+    <section class="what_we_do bg-primary-500 py-6 px-3 lg:px-0 lg:py-20">
       <div class="container mx-auto">
         <h2
-          class="uppercase text-white font-semibold text-5xl text-center mb-6"
+          class="text-white font-semibold text-l md:text-2xl lg:text-5xl md:text-center mb-2 md:mb-6"
         >
           What We Do
         </h2>
-        <p class="text-white text-md leading-relaxed mt-4 w-3/4 mx-auto">
+        <p
+          class="text-white text-sm md:text-base lg:text-base leading-relaxed mt-2 lg:mt-4 w-full mx-auto lg:w-3/4 p-1 lg:p-0"
+        >
           We are Established in 2009 with a strong knowledge in Advertising
           Industry and we have been specialized in corporate Branding for
           different sectors like Fashion, Food, Entertainment and in many other
@@ -419,7 +645,9 @@
           As Well, We Have Maintained a warm relationship with our clients in
           our past successful years.
         </p>
-        <p class="text-white text-md leading-relaxed mt-4 w-3/4 mx-auto">
+        <p
+          class="text-white text-sm md:text-base lg:text-base leading-relaxed mt-2 lg:mt-4 w-full mx-auto lg:w-3/4 p-1 lg:p-0"
+        >
           We Are Focused In Wall Branding, Hoarding Branding, Opening soon
           graphics Installation, Sign Boards, Large Format Printing Like
           Displays, Indoor and Outdoor Banners, Flags, Printing For Events,
@@ -427,189 +655,289 @@
           with Different Materials Like Flex, Vinyl, Fabric, Acrylic, LED
           Displays and more.
         </p>
-        <p class="text-white text-md leading-relaxed mt-4 w-3/4 mx-auto">
+        <p
+          class="text-white text-sm md:text-base lg:text-base leading-relaxed mt-2 lg:mt-4 w-full mx-auto lg:w-3/4 p-1 lg:p-0"
+        >
           Our Trained and Skilled team members are committed to complete the
           projects within scheduled time frame and our dedicated team members
           are always happy to help our customers in their inquiries.
         </p>
-        <p class="text-white text-md leading-relaxed mt-4 w-3/4 mx-auto">
+        <p
+          class="text-white text-sm md:text-base lg:text-base leading-relaxed mt-2 lg:mt-4 w-full mx-auto lg:w-3/4 p-1 lg:p-0"
+        >
           We have successfully Completed hundreds of Project and Showcasing few
           Of them Below.
         </p>
       </div>
     </section>
-    <section
-      class="bg-[url('/images/section_bg1.webp')] bg-no-repeat bg-right py-52"
-      data-aos="fade-left"
-    >
-      <div class="container mx-auto">
-        <div class="w-1/3" data-aos="fade-right">
-          <h3 class="text-primary-500 font-semibold text-4xl">Bus Wrap</h3>
-          <p class="text-md text-secondary leading-relaxed mt-4">
-            Dubai is a city that never sleeps, and its streets never stop
-            buzzing. Bus Advertising was missing in Dubai but is now back and
-            how! People are the least distracted when they are out and about and
-            are ready to soak in everything they see.
-          </p>
-          <a
-            href="service.html"
-            class="bg-primary-500 float-left text-secondary rounded-full py-3 px-5 font-medium mt-4 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
-            >Know More</a
+    <main class="overflow-hidden">
+      <section
+        class="bg-[url('/images/section_bg1.webp')] bg-no-repeat px-4 lg:px-4 py-5 lg:py-32 bg-contain lg:bg-cover bg-top lg:bg-custom-position-right"
+        data-aos="fade-left"
+      >
+        <div class="container mx-auto">
+          <div
+            class="w-full md:w-full lg:w-1/3 flex flex-col items-start mt-48 md:mt-96 lg:mt-0"
+            data-aos="fade-right"
           >
+            <h3
+              class="text-primary-500 font-semibold text-l md:text-xl lg:text-4xl leading-normal"
+            >
+              Indoor & Outdoor Branding
+            </h3>
+            <p class="text-sm md:text-base text-secondary leading-relaxed mt-4">
+              For all your large format printing and branding needs, we offer a
+              comprehensive range of services, including both indoor and outdoor
+              solutions. Whether you require hoardings, banners, mall hoarding
+              graphics, or backdrop banners, we provide high-quality printing
+              options tailored to your business. Our expertise covers mall
+              hoarding stickers, construction hoarding visuals, and striking
+              “Coming Soon” or “Opening Soon” graphics. With options for flex
+              and tarpaulin printing near you, our services ensure that your
+              indoor and outdoor branding is eye-catching, impactful, and suited
+              to any environment, whether it's for malls or outdoor construction
+              sites.
+            </p>
+            <a
+              href="service_branding.html"
+              class="bg-primary-500 inline-flex whitespace-nowrap text-secondary text-sm md:text-base lg:text-base rounded-full py-3 px-5 font-medium mt-5 md:mt-7 lg:mt-7 mb-4 md:mb-0 lg:mb-0 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+              >Know More</a
+            >
+          </div>
         </div>
-      </div>
-    </section>
-    <section
-      class="bg-[url('/images/section_bg2.webp')] bg-no-repeat bg-left py-52"
-      data-aos="fade-right"
-    >
-      <div class="container mx-auto">
-        <div class="w-1/3 ml-auto" data-aos="fade-left">
-          <h3 class="text-primary-500 font-semibold text-4xl">Bus Wrap</h3>
-          <p class="text-md text-secondary leading-relaxed mt-4">
-            Dubai is a city that never sleeps, and its streets never stop
-            buzzing. Bus Advertising was missing in Dubai but is now back and
-            how! People are the least distracted when they are out and about and
-            are ready to soak in everything they see.
-          </p>
-          <button
-            class="bg-primary-500 text-secondary rounded-full py-3 px-5 font-medium mt-4 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+      </section>
+      <section
+        class="bg-[url('/images/section_bg2.webp')] bg-no-repeat px-4 lg:px-0 py-5 lg:py-32 bg-contain lg:bg-cover bg-top lg:bg-custom-position-left"
+        data-aos="fade-right"
+      >
+        <div class="container mx-auto">
+          <div
+            class="w-full md:w-full lg:w-1/3 flex flex-col items-start mt-48 md:mt-96 lg:mt-0 ml-auto"
+            data-aos="fade-left"
           >
-            Know More
-          </button>
+            <h3
+              class="text-primary-500 font-semibold text-l md:text-xl lg:text-4xl leading-normal"
+            >
+              Indoor & Outdoor Signs
+            </h3>
+            <p class="text-sm md:text-base text-secondary leading-relaxed mt-4">
+              We offer a wide range of signage solutions for both indoor and
+              outdoor settings, tailored to meet the unique branding needs of
+              businesses. From office reception sign boards that create a
+              professional and welcoming atmosphere to sign boards for malls,
+              retail stores, warehouses, and buildings, we provide high-quality
+              designs that stand out. Our services also cater to cafes, shops,
+              and other establishments, ensuring that your signage is visually
+              appealing and effectively communicates your brand message. Whether
+              you’re looking for striking signs for outdoor branding or elegant
+              indoor displays, our team ensures durable, custom-made solutions
+              for any environment.
+            </p>
+            <a
+              href="service_signage.html"
+              class="bg-primary-500 text-secondary text-sm md:text-base lg:text-base inline-flex whitespace-nowrap rounded-full py-3 px-5 font-medium mt-5 md:mt-7 lg:mt-7 mb-4 md:mb-0 lg:mb-0 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+            >
+              Know More
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
-    <section
-      class="bg-[url('/images/section_bg3.webp')] bg-no-repeat bg-right py-52"
-      data-aos="fade-left"
-    >
-      <div class="container mx-auto">
-        <div class="w-1/3" data-aos="fade-right">
-          <h3 class="text-primary-500 font-semibold text-4xl">Bus Wrap</h3>
-          <p class="text-md text-secondary leading-relaxed mt-4">
-            Dubai is a city that never sleeps, and its streets never stop
-            buzzing. Bus Advertising was missing in Dubai but is now back and
-            how! People are the least distracted when they are out and about and
-            are ready to soak in everything they see.
-          </p>
-          <button
-            class="bg-primary-500 text-secondary rounded-full py-3 px-5 font-medium mt-4 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+      </section>
+      <section
+        class="bg-[url('/images/section_bg3.webp')] bg-no-repeat px-4 lg:px-0 py-5 lg:py-32 bg-contain lg:bg-cover bg-top lg:bg-custom-position-right"
+        data-aos="fade-left"
+      >
+        <div class="container mx-auto">
+          <div
+            class="w-full md:w-full lg:w-1/3 flex flex-col items-start mt-48 md:mt-96 lg:mt-0"
+            data-aos="fade-right"
           >
-            Know More
-          </button>
+            <h3
+              class="text-primary-500 font-semibold text-l md:text-xl lg:text-4xl leading-normal"
+            >
+              Office & Store’s<br />Wall Graphics
+            </h3>
+            <p class="text-sm md:text-base text-secondary leading-relaxed mt-4">
+              Revitalize your office or store space with striking wall graphics
+              designed to make a lasting impression. Our services include custom
+              wall graphics printing, large-scale wall art, and framed artwork
+              that adds a touch of sophistication. For restaurants and cafes, we
+              provide fabric printing solutions tailored for wall branding,
+              creating inviting and stylish interiors. Whether you're looking
+              for mall branding, office wall graphics, or mural wallpaper, we
+              offer high-quality designs that transform any space into a branded
+              experience. Perfect for enhancing décor, our wall graphics bring
+              creativity and professionalism to your environment.
+            </p>
+            <a
+              href="service_graphics.html"
+              class="bg-primary-500 text-secondary text-sm md:text-base lg:text-base inline-flex whitespace-nowrap rounded-full py-3 px-5 font-medium mt-5 md:mt-7 lg:mt-7 mb-4 md:mb-0 lg:mb-0 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+            >
+              Know More
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
-    <section
-      class="bg-[url('/images/section_bg4.webp')] bg-no-repeat bg-left py-52"
-      data-aos="fade-right"
-    >
-      <div class="container mx-auto">
-        <div class="w-1/3 ml-auto" data-aos="fade-left">
-          <h3 class="text-primary-500 font-semibold text-4xl">Bus Wrap</h3>
-          <p class="text-md text-secondary leading-relaxed mt-4">
-            Dubai is a city that never sleeps, and its streets never stop
-            buzzing. Bus Advertising was missing in Dubai but is now back and
-            how! People are the least distracted when they are out and about and
-            are ready to soak in everything they see.
-          </p>
-          <button
-            class="bg-primary-500 text-secondary rounded-full py-3 px-5 font-medium mt-4 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+      </section>
+      <section
+        class="bg-[url('/images/section_bg4.webp')] bg-no-repeat px-4 lg:px-0 py-5 lg:py-32 bg-contain lg:bg-cover bg-top lg:bg-custom-position-left"
+        data-aos="fade-right"
+      >
+        <div class="container mx-auto">
+          <div
+            class="w-full md:w-full lg:w-1/3 flex flex-col items-start mt-48 md:mt-96 lg:mt-0 ml-auto"
+            data-aos="fade-left"
           >
-            Know More
-          </button>
+            <h3
+              class="text-primary-500 font-semibold text-l md:text-xl lg:text-4xl leading-normal"
+            >
+              Paper Bags & Boxes
+            </h3>
+            <p class="text-sm md:text-base text-secondary leading-relaxed mt-4">
+              We offer a variety of eco-friendly and custom-designed paper bags
+              and boxes, perfect for packaging and promotional needs. Whether
+              you're looking for luxury gift boxes, branded paper bags, or
+              sturdy packaging solutions, our products are tailored to fit your
+              business requirements. From retail stores to corporate giveaways,
+              our paper bags and boxes come in various sizes, designs, and
+              finishes, ensuring a premium feel while being environmentally
+              conscious.
+            </p>
+            <a
+              href="service_bags.html"
+              class="bg-primary-500 inline-flex text-sm md:text-base lg:text-base whitespace-nowrap text-secondary rounded-full py-3 px-5 font-medium mt-5 md:mt-7 lg:mt-7 mb-4 md:mb-0 lg:mb-0 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+            >
+              Know More
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
-    <section
-      class="bg-[url('/images/section_bg5.webp')] bg-no-repeat bg-right py-52"
-      data-aos="fade-left"
-    >
-      <div class="container mx-auto">
-        <div class="w-1/3" data-aos="fade-right">
-          <h3 class="text-primary-500 font-semibold text-4xl">Bus Wrap</h3>
-          <p class="text-md text-secondary leading-relaxed mt-4">
-            Dubai is a city that never sleeps, and its streets never stop
-            buzzing. Bus Advertising was missing in Dubai but is now back and
-            how! People are the least distracted when they are out and about and
-            are ready to soak in everything they see.
-          </p>
-          <button
-            class="bg-primary-500 text-secondary rounded-full py-3 px-5 font-medium mt-4 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+      </section>
+      <section
+        class="bg-[url('/images/section_bg5.webp')] bg-no-repeat px-4 lg:px-0 py-5 lg:py-32 bg-contain lg:bg-cover bg-top lg:bg-custom-position-right"
+        data-aos="fade-left"
+      >
+        <div class="container mx-auto">
+          <div
+            class="w-full md:w-full lg:w-1/3 flex flex-col items-start mt-48 md:mt-96 lg:mt-0"
+            data-aos="fade-right"
           >
-            Know More
-          </button>
+            <h3
+              class="text-primary-500 font-semibold text-l md:text-xl lg:text-4xl leading-normal"
+            >
+              Flags & Banners
+            </h3>
+            <p class="text-sm md:text-base text-secondary leading-relaxed mt-4">
+              We offer a diverse range of flags and banners to meet your
+              promotional and branding needs. Our selection includes curved top
+              flags, L banner flags, and flying banner flags, perfect for
+              outdoor and indoor displays. We also specialize in banner stands,
+              pop-up banners, flag printing, and custom flag banners for various
+              events. Whether you need backdrop banners, sports banners, hanging
+              banners, or bunting flags, our high-quality products ensure
+              maximum visibility. For easy setup, we provide pull-up and roller
+              banners, as well as cloth banners that are ideal for both
+              commercial and personal use.
+            </p>
+            <a
+              href="service_flags.html"
+              class="bg-primary-500 inline-flex text-sm md:text-base lg:text-base whitespace-nowrap text-secondary rounded-full py-3 px-5 font-medium mt-5 md:mt-7 lg:mt-7 mb-4 md:mb-0 lg:mb-0 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+            >
+              Know More
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
-    <section
-      class="bg-[url('/images/section_bg6.webp')] bg-no-repeat bg-left py-52"
-      data-aos="fade-right"
-    >
-      <div class="container mx-auto">
-        <div class="w-1/3 ml-auto" data-aos="fade-left">
-          <h3 class="text-primary-500 font-semibold text-4xl">Bus Wrap</h3>
-          <p class="text-md text-secondary leading-relaxed mt-4">
-            Dubai is a city that never sleeps, and its streets never stop
-            buzzing. Bus Advertising was missing in Dubai but is now back and
-            how! People are the least distracted when they are out and about and
-            are ready to soak in everything they see.
-          </p>
-          <button
-            class="bg-primary-500 text-secondary rounded-full py-3 px-5 font-medium mt-4 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+      </section>
+      <section
+        class="bg-[url('/images/section_bg6.webp')] bg-no-repeat px-4 lg:px-0 py-5 lg:py-32 bg-contain lg:bg-cover bg-top lg:bg-custom-position-left"
+        data-aos="fade-right"
+      >
+        <div class="container mx-auto">
+          <div
+            class="w-full md:w-full lg:w-1/3 flex flex-col items-start mt-48 md:mt-96 lg:mt-0 ml-auto"
+            data-aos="fade-left"
           >
-            Know More
-          </button>
+            <h3
+              class="text-primary-500 font-semibold text-l md:text-xl lg:text-4xl leading-normal"
+            >
+              Gifts & Promotions
+            </h3>
+            <p class="text-sm md:text-base text-secondary leading-relaxed mt-4">
+              Elevate your brand with our range of customized corporate and
+              promotional gifts. From USB flash drives, mug printing, and
+              keychains to diary printing and debossing, we offer personalized
+              products that make a lasting impression. Our collection includes
+              leather bags, water bottles, pens, power banks, business card
+              holders, backpacks, travel bags, stress balls, and T-shirt and cap
+              printing. We also provide premium items like leather wallets,
+              wireless chargers, Bluetooth speakers, wristbands, and beach bags.
+              Whether for events or giveaways, our gifts help you promote your
+              brand effectively.
+            </p>
+            <a
+              href="service_gifts.html"
+              class="bg-primary-500 inline-flex text-sm md:text-base lg:text-base whitespace-nowrap text-secondary rounded-full py-3 px-5 font-medium mt-5 md:mt-7 lg:mt-7 mb-4 md:mb-0 lg:mb-0 transition duration-300 ease-in-out hover:bg-secondary hover:text-white"
+            >
+              Know More
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="bg-primary-500 py-14">
+      </section>
+    </main>
+    <section class="bg-primary-500 px-4 lg:px-0 py-6 lg:py-14">
       <div class="container mx-auto grid grid-cols-12">
-        <div class="col-span-2">
-          <h5 class="font-medium text-white uppercase text-md">
+        <div class="col-span-12 lg:col-span-2">
+          <h5 class="font-semibold text-white text-l lg:text-xl mb-3 lg:mb-0">
             Connect With Us
           </h5>
         </div>
-        <div class="col-span-3">
-          <h4 class="text-white font-semibold text-lg leading-relaxed">
+        <div class="col-span-12 lg:col-span-3 flex flex-col items-start">
+          <h4
+            class="text-white font-medium text-base lg:text-lg leading-relaxed"
+          >
             Thanks to innovation, you have complete control and flexibility on
             any budget. Big or small.
           </h4>
-          <button
+          <a
+            href="tel:+971557637146"
             class="py-3 px-5 rounded-full border-2 border-white font-semibold text-white mt-5 transition duration-300 ease-in-out hover:bg-secondary hover:border-secondary"
           >
             +971 55 763 7146
-          </button>
+          </a>
         </div>
       </div>
     </section>
-    <footer class="bg-secondary py-14">
+    <footer class="bg-secondary px-4 lg:px-0 py-6 lg:py-14">
       <div class="container mx-auto grid grid-cols-12 items-end">
-        <div class="col-span-5">
-          <h4 class="text-white text-lg font-medium">EFFOR Advertising</h4>
-          <p class="text-white text-sm leading-relaxed mt-5">
+        <div class="col-span-12 lg:col-span-5">
+          <h4 class="text-white text-lg lg:text-lg font-medium">
+            EFFOR Advertising
+          </h4>
+          <p class="text-white text-sm leading-relaxed mt-2 lg:mt-5">
             P.O Box: 23320, Al Asher Office Building, Dubai, U.A.E<br />
             Tel: 04 379 4618, Mob: +971 55 763 7146<br />
             Email: efforads@gmail.com
           </p>
-          <p class="text-white text-sm leading-relaxed mt-12">www.effor.ae</p>
+          <p class="text-white text-sm leading-relaxed mt-1 lg:mt-12">
+            www.effor.ae
+          </p>
         </div>
-        <div class="col-span-4">
+        <div class="col-span-12 lg:col-span-4 mt-7 lg:mt-0">
           <p class="text-white text-sm leading-relaxed mb-1">
             Subscribe to our newsletter
           </p>
           <input
             type="text"
             placeholder="Email"
-            class="border-b-2 border-gray-400 bg-transparent text-sm text-white w-2/3 py-3"
+            class="border-b-2 border-gray-400 bg-transparent text-sm text-white w-full lg:w-2/3 py-3"
           />
-          <p class="text-white text-sm leading-relaxed mt-12">
+          <p
+            class="text-white text-sm leading-relaxed mt-12 text-center lg:text-left"
+          >
             @2024 EFFOR all Rights Reserved
           </p>
         </div>
-        <div class="col-span-3">
-          <div class="flex justify-end space-x-2 text-sm">
+        <div class="col-span-12 lg:col-span-3">
+          <div
+            class="flex justify-center lg:justify-end space-x-2 text-sm mt-5 lg:mt-0"
+          >
             <a
               href="#"
               class="transition duration-300 ease-in-out hover:scale-110"
@@ -641,7 +969,9 @@
               <img src="./public/images/icons/twitter.svg" class="w-8 h-8" />
             </a>
           </div>
-          <div class="flex justify-end space-x-3 text-sm mt-8 text-white">
+          <div
+            class="lg:flex justify-end space-x-3 text-sm mt-8 text-white hidden"
+          >
             <a href="#" class="hover:text-primary-300"> Home </a>
             <a href="#" class="hover:text-primary-300"> About Us </a>
             <a href="#" class="hover:text-primary-300"> Services </a>
@@ -650,6 +980,15 @@
         </div>
       </div>
     </footer>
+    <div class="whatsapp">
+      <p>Let's talk about<br />your project!</p>
+      <a
+        target="_blank"
+        href="//api.whatsapp.com/send?phone=971557637146&text=Hi, I’d like to learn more about your advertising services. Could you please provide me with more details? Thank you!"
+      >
+      </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>

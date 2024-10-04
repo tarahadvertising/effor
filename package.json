@@ -20,10 +20,12 @@
     "vite": "^5.4.1"
   },
   "dependencies": {
+    "@barba/core": "^2.10.3",
     "aos": "^2.3.4",
-    "jquery": "^3.2.1",
+    "jquery-parallax.js": "^1.5.0",
     "postcss-custom-properties": "^14.0.1",
     "swiper": "^11.1.14",
+    "tailwindcss-filters": "^3.0.0",
     "tippy.js": "^6.3.7"
   }
 }

@@ -1,11 +1,381 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div
+      id="page-loader"
+      class="fixed inset-0 bg-secondary opacity-80 flex items-center justify-center z-50"
+    >
+      <span class="loader"></span>
+    </div>
+    <header class="bg-secondary p-5 w-full z-10" id="header">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-12 items-center">
+          <div class="col-span-6 md:col-span-4 lg:col-span-2">
+            <img
+              class="h-auto w-full md:w-2/3 lg:w-2/3"
+              src="./public/images/logo.svg"
+              alt="Logo"
+            />
+          </div>
+          <nav class="col-span-12 md:col-span-8 lg:col-span-10 hidden md:block">
+            <div
+              class="flex justify-end space-x-6 text-base text-primary-300 tracking-wider"
+            >
+              <a
+                href="index.html"
+                class="hover:text-white transition-all duration-300 ease-in"
+                >Home</a
+              >
+              <div
+                class="relative inline-block text-left group hover:text-white"
+              >
+                <a
+                  href="service_branding.html"
+                  id="service-button"
+                  aria-expanded="true"
+                  aria-haspopup="true"
+                  class="transition-all duration-300 ease-in"
+                >
+                  Services
+                </a>
+                <div
+                  class="absolute -right-7 z-10 w-64 origin-top-right focus:outline-none pt-7 transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-all duration-300 ease-out invisible group-hover:visible"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="menu-button"
+                  tabindex="-1"
+                >
+                  <div
+                    class="bg-primary-500 shadow-lg ring-1 ring-black ring-opacity-5 tracking-normal"
+                    role="none"
+                  >
+                    <a
+                      href="service_branding.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Indoor & Outdoor Branding
+                    </a>
+                    <a
+                      href="service_signage.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Indoor & Outdoor Signs
+                    </a>
+                    <a
+                      href="service_graphics.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Office & Store’s Wall Graphics
+                    </a>
+                    <a
+                      href="service_bags.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Paper Bags & Boxes
+                    </a>
+                    <a
+                      href="service_flags.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 border-b border-primary-600 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Flags & Banners
+                    </a>
+                    <a
+                      href="service_gifts.html"
+                      class="block px-4 py-3 text-sm text-white hover:bg-secondary hover:text-primary-300 transition-all duration-300 ease-in"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Gifts & Promotions
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="contact.html"
+                class="hover:text-white transition-all duration-300 ease-in"
+                >Contact Us</a
+              >
+              <a
+                href="/effor_profile.pdf"
+                target="_blank"
+                class="hover:text-white transition-all duration-300 ease-in"
+                >Company Profile</a
+              >
+            </div>
+          </nav>
+          <div class="md:hidden col-span-6 flex justify-end">
+            <button
+              id="menu-button"
+              class="text-primary-500 bg-transparent focus:outline-none"
+            >
+              <svg
+                id="menu-icon"
+                class="w-10 h-10"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+              <svg
+                id="close-icon"
+                class="w-10 h-10 hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden mt-5">
+        <nav class="flex flex-col space-y-2">
+          <a
+            class="font-medium text-sm text-primary-500 pt-2 pb-4 border-b border-neutral-800 leading-relaxed"
+            href="index.html"
+            >Home</a
+          >
+          <div class="border-b border-neutral-800 leading-relaxed">
+            <a
+              id="mobileServicesMenu"
+              class="font-medium text-sm text-primary-500 pt-2 pb-4 float-left w-full"
+              >Services</a
+            >
+            <div
+              id="mobileServicesDiv"
+              class="max-h-0 overflow-hidden transition-all duration-500 pl-8 space-y-2 float-left w-full"
+            >
+              <a
+                class="font-sm text-sm text-primary-500 pb-3 float-left w-full"
+                href="service_branding.html"
+                >Indoor & Outdoor Branding</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_signage.html"
+                >Indoor & Outdoor Signs</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_graphics.html"
+                >Office & Store’s Wall Graphics</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_bags.html"
+                >Paper Bags & Boxes</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 py-1 float-left w-full"
+                href="service_flags.html"
+                >Flags & Banners</a
+              >
+              <a
+                class="font-sm text-sm text-primary-500 pt-3 float-left w-full pb-5"
+                href="service_gifts.html"
+                >Gifts & Promotions</a
+              >
+            </div>
+          </div>
+          <a
+            class="font-medium text-sm text-primary-500 pt-2 pb-4 border-b border-neutral-800 leading-relaxed"
+            href="contact.html"
+            >Contact Us</a
+          >
+          <a
+            class="font-medium text-sm text-primary-500 pt-2 leading-relaxed"
+            href="/effor_profile.pdf"
+            >Company Profile</a
+          >
+        </nav>
+      </div>
+    </header>
+    <section class="relative">
+      <div
+        class="parallax-window min-h-[400px] lg:min-h-[750px] md:min-h-[500px]"
+        data-parallax="scroll"
+        data-image-src="/images/contact_banner.webp"
+      ></div>
+    </section>
+    <section class="bg-white px-4 py-6 md:py-7 lg:py-28 md:px-5 lg:px-0">
+      <div class="container mx-auto grid grid-cols-12">
+        <div class="col-span-12 md:col-span-6 lg:col-span-6">
+          <h3
+            class="text-primary-500 font-semibold text-xl md:text-2xl lg:text-4xl"
+          >
+            Contact Us
+          </h3>
+          <p
+            class="text-secondary text-sm md:text-base lg:text-base mt-4 lg:mt-6 w-full md:w-full lg:w-3/4 leading-relaxed mb-8"
+          >
+            At Effor Advertising, we specialize in providing custom design and
+            strategic advertising solutions to help elevate your brand. Whether
+            you need promotional gifts, printing services, or tailored
+            advertising strategies, our dedicated team is here to assist you.
+            Reach out to us via phone, email, or visit our office in Dubai for a
+            personalized consultation. Let's work together to achieve your
+            advertising goals!
+          </p>
+          <p
+            class="text-secondary text-sm md:text-base lg:text-base font-medium bg-[url('/images/icons/phone.svg')] bg-no-repeat bg-contain bg-left pl-9 my-4"
+          >
+            Tel : 04 379 4618, Mob : +971 55 763 7146
+          </p>
+          <p
+            class="text-secondary text-sm md:text-base lg:text-base font-medium bg-[url('/images/icons/mail.svg')] bg-no-repeat bg-contain bg-left pl-9 my-4"
+          >
+            efforads@gmail.com
+          </p>
+          <p
+            class="text-secondary text-sm md:text-base lg:text-base font-medium bg-[url('/images/icons/map.svg')] bg-no-repeat bg-contain bg-left pl-9 my-4"
+          >
+            Al Asher Office Building, Dubai, U.A.E
+          </p>
+        </div>
+        <div
+          class="col-span-12 md:col-span-6 lg:col-span-6 pl-0 md:pl-3 lg:pl-0 mt-4 lg:mt-0"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5183.300168321855!2d55.431535795829895!3d25.286440843851555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f73b42e3551%3A0xaa00a9e4a0f5ad19!2seffor%20advertising!5e1!3m2!1sen!2sae!4v1727441842153!5m2!1sen!2sae"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <section class="bg-primary-500 px-4 lg:px-0 py-6 lg:py-14">
+      <div class="container mx-auto grid grid-cols-12">
+        <div class="col-span-12 lg:col-span-2">
+          <h5 class="font-semibold text-white text-l lg:text-xl mb-3 lg:mb-0">
+            Connect With Us
+          </h5>
+        </div>
+        <div class="col-span-12 lg:col-span-3 flex flex-col items-start">
+          <h4
+            class="text-white font-medium text-base lg:text-lg leading-relaxed"
+          >
+            Thanks to innovation, you have complete control and flexibility on
+            any budget. Big or small.
+          </h4>
+          <a
+            href="tel:+971557637146"
+            class="py-3 px-5 rounded-full border-2 border-white font-semibold text-white mt-5 transition duration-300 ease-in-out hover:bg-secondary hover:border-secondary"
+          >
+            +971 55 763 7146
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-secondary px-4 lg:px-0 py-6 lg:py-14">
+      <div class="container mx-auto grid grid-cols-12 items-end">
+        <div class="col-span-12 lg:col-span-5">
+          <h4 class="text-white text-lg lg:text-lg font-medium">
+            EFFOR Advertising
+          </h4>
+          <p class="text-white text-sm leading-relaxed mt-2 lg:mt-5">
+            P.O Box: 23320, Al Asher Office Building, Dubai, U.A.E<br />
+            Tel: 04 379 4618, Mob: +971 55 763 7146<br />
+            Email: efforads@gmail.com
+          </p>
+          <p class="text-white text-sm leading-relaxed mt-1 lg:mt-12">
+            www.effor.ae
+          </p>
+        </div>
+        <div class="col-span-12 lg:col-span-4 mt-7 lg:mt-0">
+          <p class="text-white text-sm leading-relaxed mb-1">
+            Subscribe to our newsletter
+          </p>
+          <input
+            type="text"
+            placeholder="Email"
+            class="border-b-2 border-gray-400 bg-transparent text-sm text-white w-full lg:w-2/3 py-3"
+          />
+          <p
+            class="text-white text-sm leading-relaxed mt-12 text-center lg:text-left"
+          >
+            @2024 EFFOR all Rights Reserved
+          </p>
+        </div>
+        <div class="col-span-12 lg:col-span-3">
+          <div
+            class="flex justify-center lg:justify-end space-x-2 text-sm mt-5 lg:mt-0"
+          >
+            <a
+              href="#"
+              class="transition duration-300 ease-in-out hover:scale-110"
+            >
+              <img src="./public/images/icons/whatsapp.svg" class="w-8 h-8" />
+            </a>
+            <a
+              href="#"
+              class="transition duration-300 ease-in-out hover:scale-110"
+            >
+              <img src="./public/images/icons/fb.svg" class="w-8 h-8" />
+            </a>
+            <a
+              href="#"
+              class="transition duration-300 ease-in-out hover:scale-110"
+            >
+              <img src="./public/images/icons/insta.svg" class="w-8 h-8" />
+            </a>
+            <a
+              href="#"
+              class="transition duration-300 ease-in-out hover:scale-110"
+            >
+              <img src="./public/images/icons/linkedin.svg" class="w-8 h-8" />
+            </a>
+            <a
+              href="#"
+              class="transition duration-300 ease-in-out hover:scale-110"
+            >
+              <img src="./public/images/icons/twitter.svg" class="w-8 h-8" />
+            </a>
+          </div>
+          <div
+            class="lg:flex justify-end space-x-3 text-sm mt-8 text-white hidden"
+          >
+            <a href="#" class="hover:text-primary-300"> Home </a>
+            <a href="#" class="hover:text-primary-300"> About Us </a>
+            <a href="#" class="hover:text-primary-300"> Services </a>
+            <a href="#" class="hover:text-primary-300"> Contact Us </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>
